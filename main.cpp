@@ -1,8 +1,10 @@
 /*
  * \file main.cpp
  *
- * \brief Permet de tester rapidement la classe TicTacToe.
- * ATTENTION: Les inputs ne sont pas validés.
+ * \brief GIF-1003, laboratoire 7, exercice 5
+ *
+ * #Permet de tester rapidement la classe TicTacToe.
+ * ##ATTENTION: Les inputs ne sont pas validés.
  *
  * Le joueur 1 joue en premier. Les coups sont entrés suivant le format suivant: "r c" où r est la rangée
  * et c est la colonne.  Des entrées non-valides font planter le programme.  Le jeu s'arrête lorsque la
@@ -13,7 +15,7 @@
  * TODO Système d'entrées plus intuitif.
  *
  *  Created on: 2020-10-10
- *  \author: etudiant
+ *  \author: Pascal Charpentier
  */
 
 #include "TicTacToe.h"
@@ -32,7 +34,7 @@ int main()
 	{
 		cout << partie.reqGrilleFormattee(symboles);
 		cout << "C'est au tour des " << symboles[partie.auTourDe()] << endl;
-		cout << "Saisir le prochain coup: ";
+		cout << "Veuillez saisir le prochain coup sous la forme Rangée Colonne ou Rangée et Colonne sont des nombres entre 0 et 2 : ";
 		cin >> rangee >> colonne;
 		partie.joue(rangee, colonne);
 	}
@@ -41,15 +43,15 @@ int main()
 	cout << partie.reqGrilleFormattee(symboles);
 	if (partie.partieEstGagnee())
 	{
-		cout << "Partie remportée par les " << symboles[partie.reqGagnant()] << endl;
+		cout << "\n\nPartie remportée par les " << symboles[partie.reqGagnant()] << "!!!" << endl;
 	}
 	else if (partie.partieEstNulle())
 	{
-		cout << "Partie nulle!" << endl;
+		cout << "\n\nPartie nulle!" << endl;
 	}
 	else
 	{
-		cout << "Partie terminée anormalement!" << endl;
+		cout << "\n\nPartie terminée anormalement!" << endl;
 	}
 
 	return 0;

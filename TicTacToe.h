@@ -59,7 +59,7 @@ public:
 	void affiche() const ;
 	std::string reqGrilleFormattee(const char symboles[3]) const ;
 
-	virtual ~TicTacToe();
+
 };
 
 } /* namespace lab7 */

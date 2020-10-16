@@ -288,13 +288,19 @@ int TicTacToe::reqGagnant() const
  */
 std::string TicTacToe::reqGrilleFormattee(const char symboles[3]) const
 {
+	static const std::string formattage[] = {
+			"\033[65;1m", "\033[1;31m", "\033[1;34m"
+	};
+
+	static const std::string reset = "\033[0m";
+
 	std::ostringstream os;
 
 	for (auto& rangee: m_grille)
 	{
 		for (auto carre: rangee)
 		{
-			os << std::setw(5) << symboles[carre];
+			os <<  formattage[carre] << std::setw(15) <<symboles[carre] << reset;
 		}
 		os << std::endl;
 	}
@@ -316,8 +322,6 @@ void TicTacToe::affiche() const
 	}
 }
 
-TicTacToe::~TicTacToe() {
-	// TODO Auto-generated destructor stub
-}
+
 
 } /* namespace lab7 */
